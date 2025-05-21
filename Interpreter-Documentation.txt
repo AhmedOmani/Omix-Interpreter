@@ -1,0 +1,29 @@
+===> OmiX lang basic features :
+        - Objects
+        - Variables
+        - Control flow
+        - Functions 
+
+===> Omix lang detailed features :
+
+        - Omix C/JAVA styled language .
+
+        - OmiX dynamically typed 
+
+        - Functions are first class which means it can passed as an argument to another Functions, 
+          Functions can return another Function , Functions stored in variables , and closures are implemented.
+
+        - Define variables with word "var".
+
+        - Control flow with statement conditions and loops.
+
+        - Maybe it will be oject oriented language with Classes styling.
+
+        - Comparison and Equality (!= , ==).
+
+        - Classes :
+            1- Declaration will be without "new" keyword.
+            2- Accessing data of object inside the object with "this" keyword.
+            3- Constructor is called "init" function , any params send to the class will be through this function.
+
+        - The grammer of the language contains experession and statements. 
