@@ -18,8 +18,7 @@ func NewOmix() *Omix {
 
 func main() {
 	omix := NewOmix();
-	fmt.Println( len(os.Args));
-	fmt.Println( os.Args);
+	
 	if len(os.Args) > 2 {
 		fmt.Println("Usage: omix [script]")
 		os.Exit(64);
