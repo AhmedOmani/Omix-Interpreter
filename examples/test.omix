@@ -1,1 +1,4 @@
-Hola
+// Special characters in strings
+"hello\nworld"
+"hello\tworld"
+"hello\\world"

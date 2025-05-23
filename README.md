@@ -1,93 +1,92 @@
 # Omix Interpreter
 
-A modular, extensible interpreter implementation in Go, following the principles from "Crafting Interpreters". This project demonstrates the implementation of a programming language interpreter with a clean, layered architecture.
+A modern interpreter implementation in Go, following the principles from "Crafting Interpreters" by Robert Nystrom.
 
-## Architecture Overview
+## Project Status
 
-The interpreter follows a modular design with clear separation of concerns. Here's how the components are organized:
+### Completed Features
+- ✅ Lexical Analysis (Tokenizer)
+  - Token recognition for all language elements
+  - Support for numbers (integers, decimals, scientific notation)
+  - String literals with error handling
+  - Keywords and identifiers
+  - Operators and punctuation
+  - Comprehensive error reporting
+  - Interactive REPL mode
+  - File execution mode
 
-### 1. Command Line Interface (`cmd/omix/`)
-- Entry point for the interpreter
-- Handles user interaction through:
-  - REPL (Read-Eval-Print Loop) mode
-  - Script file execution mode
-- Manages error reporting and exit codes
-
-### 2. Core Components (`internal/`)
-#### Lexer (`internal/lexer/`)
-- `token.go`: Defines token types and structures
-- `tokenizer.go`: Implements source code tokenization
-- Converts source code into a stream of tokens
-
-#### Parser (`internal/parser/`)
-- `ast.go`: Defines Abstract Syntax Tree structures
-- `parser.go`: Implements parsing logic
-- Converts tokens into an AST
-
-#### Interpreter (`internal/interpreter/`)
-- `interpreter.go`: Core interpretation logic
-- Executes the AST
-- Manages program flow
-
-#### Runtime (`internal/runtime/`)
-- `environment.go`: Manages variable scopes
-- `values.go`: Defines runtime value types
-- Handles memory management
-
-### 3. Error Handling (`pkg/error/`)
-- Centralized error management
-- Consistent error reporting
-- Error recovery strategies
-
-### 4. Examples (`examples/`)
-- Sample programs demonstrating language features
-- Test cases and usage examples
-- Learning resources
-
-## Key Design Principles
-- Each component is self-contained and has a single responsibility
-- Clear interfaces between components
-- Easy to test and extend
-- Consistent error handling throughout
+### Current Phase
+- 🔄 Parser Implementation (In Progress)
+  - Expression parsing
+  - Statement parsing
+  - Abstract Syntax Tree (AST) construction
 
 ## Project Structure
+
 ```
 omix-interpreter/
 ├── cmd/
-│   └── omix/
-│       └── main.go             # Entry point
-│
+│   └── omix/             # Command-line interface
 ├── internal/
-│   ├── lexer/            
-│   │   ├── token.go            # Token definition
-│   │   └── tokenizer.go        # Tokenizer/Scanner implementation
-│   │
-│   ├── parser/             
-│   │   ├── ast.go              # AST definitions
-│   │   └── parser.go           # Parser implementation
-│   │
-│   ├── interpreter/            # The main interpreter
-│   │   └── interpreter.go
-│   │
-│   └── runtime/                # Runtime features
-│       ├── environment.go
-│       └── values.go
-│
-├── pkg/
-│   └── error/                  # Error handling
-│
-├── examples/                   # Example programs
-│   └── hello.omix              # Hello World example
+│   ├── lexer/            # Lexical analysis
+│   ├── parser/           # Syntax analysis (coming soon)
+│   ├── ast/              # Abstract Syntax Tree (coming soon)
+│   
+└── examples/             # The code of omix language
+└── errors/               # Error handling
+└── test/                 # Unit Testing
 ```
 
 ## Getting Started
-```bash
-# Run in REPL mode
-./omix
 
-# Execute a script file
+### Prerequisites
+- Go 1.16 or higher
+- Git
+
+### Installation
+```bash
+git clone https://github.com/yourusername/omix-interpreter.git
+cd omix-interpreter
+go build -o omix cmd/omix/main.go
+```
+
+### Usage
+
+1. Run a file:
+```bash
 ./omix path/to/script.omix
 ```
 
-## Development Status
-🚧 Under active development - Currently implementing the lexer and parser components. 
+2. Start interactive REPL:
+```bash
+./omix
+```
+
+## Language Features
+
+### Current Support (Lexer Phase)
+- Numbers:
+  - Integers: `123`
+  - Decimals: `123.456`, `.123`
+- Strings: `"hello world"`
+- Keywords: `if`, `else`, `while`, `for`, `var`, etc.
+- Operators: `+`, `-`, `*`, `/`, `==`, `!=`, etc.
+- Identifiers: Variable and function names
+
+### Coming Soon (Parser Phase)
+- Expression parsing
+- Statement parsing
+- Control flow structures
+- Function declarations
+- Class definitions
+
+## Development
+
+### Running Tests
+```bash
+go test ./...
+```
+
+## Acknowledgments
+- "Crafting Interpreters" by Robert Nystrom
+- Go programming language community 
